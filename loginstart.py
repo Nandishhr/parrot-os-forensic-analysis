@@ -1,7 +1,7 @@
 """
 File: loginstart.py
 Authors:
-    - Harshitha Shetty
+    - Harshitha S M
     - Deepti Bhat
     - Nandish H R
 """
@@ -13,10 +13,8 @@ import logging
 import os
 from logging.handlers import RotatingFileHandler
 from docx import Document
-#from docx.shared import Inches
 from docx.shared import Pt
 from docx.enum.text import WD_ALIGN_PARAGRAPH
-#from docx.shared import RGBColor
 
 # Configure logging
 logger = logging.getLogger(__name__)
