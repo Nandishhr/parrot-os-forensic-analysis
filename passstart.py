@@ -1,7 +1,7 @@
 """
 File: passstart.py
 Authors:
-    - Harshitha Shetty
+    - Harshitha S M
     - Deepti Bhat
     - Nandish H R
 """
