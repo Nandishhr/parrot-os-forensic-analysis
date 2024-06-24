@@ -2,7 +2,7 @@
 File: run.py
 Authors:
     - Deepti Bhat
-    - Harshitha Shetty
+    - Harshitha S M
 """
 import smtplib
 import ssl
