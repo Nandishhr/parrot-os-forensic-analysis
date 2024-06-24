@@ -2,9 +2,6 @@
 Please ensure you download the following dependecies before using Lhedge Services for Parrot OS:
 <br><br>
 1. Install Rsyslog
-```bash
-sudo apt update
-```
 <ul>
  <li>sudo apt update</li>
  <li>sudo apt install rsyslog</li>
