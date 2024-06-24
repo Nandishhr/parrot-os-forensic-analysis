@@ -1,3 +1,6 @@
+// File: script.js
+// Authors:
+//     - Deepti Bhat 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
 import { getDatabase, ref, push, set, get, update } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";

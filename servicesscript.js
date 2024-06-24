@@ -1,3 +1,6 @@
+// File: servicesscript.js
+// Authors:
+//     - Deepti Bhat 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
 import { getDatabase, ref, get, update } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
 
