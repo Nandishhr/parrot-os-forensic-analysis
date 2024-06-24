@@ -3,7 +3,7 @@ Please ensure you download the following dependecies before using Lhedge Service
 <br><br>
 1. Install Rsyslog
 <ul>
- <li>`sudo apt update`</li>
+ <li>sudo apt update</li>
  <li>sudo apt install rsyslog</li>
  <li>sudo systemctl enable rsyslog</li>
  <li>sudo systemctl start rsyslog</li>
