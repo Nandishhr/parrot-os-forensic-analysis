@@ -1,3 +1,9 @@
+"""
+File: run.py
+Authors:
+    - Deepti Bhat
+    - Harshitha Shetty
+"""
 import smtplib
 import ssl
 import sys

@@ -1,3 +1,8 @@
+"""
+File: run.py
+Authors:
+    - Deepti Bhat
+"""
 import os
 
 def create_desktop_launcher(name, command, icon=None):
