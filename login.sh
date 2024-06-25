@@ -1,5 +1,10 @@
+# File: login.sh
+# Authors:
+#     - Nandish H R
+#     - Ramvikas S V
+#     - Deepti Bhat
 #!/bin/bash
-
+ 
 # Define the log file path and position file
 AUTH_LOG="/var/log/auth.log"
 LOG_POSITION="/tmp/auth_log_position"
