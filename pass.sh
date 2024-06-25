@@ -1,3 +1,9 @@
+# File: pass.sh
+# Authors:
+#     - Ramvikas S V
+#     - Nandish H R
+#     - Hemanth Kumar S
+#     - Deepti Bhat
 #!/bin/bash
 
 # Define the log file path and position file
