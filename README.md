@@ -1,6 +1,6 @@
 # Lhedge Services for Parrot OS
 
-Lhedge is a Forensic Analysis Tool that can be used on Parrot OS to avail the follwing security servies:
+Lhedge is a Forensic Analysis Tool that can be used on Parrot OS to avail the following security servies:
 <ul>
     <li>Detection of Failed Logins into the System</li>
     <li>Detection of Password Changes</li>
