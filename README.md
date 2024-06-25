@@ -7,6 +7,8 @@ Lhedge is a Forensic Analysis Tool that can be used on Parrot OS to avail the fo
     <li>Detection of Malwares in Directories</li>
 </ul>
 Any suspicious activity that is detected is emailed with the forensic details to the registered user.
+<br><br>
+<img src="lhedge_signin.png" alt="Signin Page" width="600px" height="450px"/>
 <hr>
 Please ensure you download the following dependencies before using Lhedge Services for Parrot OS:
 
