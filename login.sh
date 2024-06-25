@@ -85,7 +85,6 @@ check_failed_logins() {
             # Update the log position
             current_position=$(wc -c < "$AUTH_LOG")
             echo "$current_position" > "$LOG_POSITION"
-            # Add custom actions here (e.g., send email alert, log to another file)
         fi
     done <<< "$user_counts"
     if $output_generated; then
