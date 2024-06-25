@@ -1,7 +1,7 @@
 # File: pass.sh
 # Authors:
-#     - Ramvikas S V
 #     - Nandish H R
+#     - Ramvikas S V
 #     - Hemanth Kumar S
 #     - Deepti Bhat
 #!/bin/bash
