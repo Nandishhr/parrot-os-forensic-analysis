@@ -8,13 +8,7 @@ import { getDatabase, ref, get, update } from "https://www.gstatic.com/firebasej
 
 //FireBase Configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyC8ko4BfMetvLPEUHJ35_A4Pv3-S8e0e2Q",
-  authDomain: "lhedge-signin.firebaseapp.com",
-  databaseURL: "https://lhedge-signin-default-rtdb.firebaseio.com",
-  projectId: "lhedge-signin",
-  storageBucket: "lhedge-signin.appspot.com",
-  messagingSenderId: "69918521908",
-  appId: "1:69918521908:web:193a5ef01a9ebe2432a861"
+  //Enter your firebaseConfig
 };
 
 //Initialize Firebase
