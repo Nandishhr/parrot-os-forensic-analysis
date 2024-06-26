@@ -9,8 +9,8 @@ import ssl
 import sys
 from email.message import EmailMessage
 
-email_sender = 'lhedge24team@gmail.com'
-email_password = 'fwus jmnb hzin tsdb'
+email_sender = ''
+email_password = ''
 email_receiver = sys.argv[2]
 
 #Email Content
