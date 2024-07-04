@@ -1,13 +1,13 @@
+#!/bin/bash
 # File: detect_failed_login.sh
 # Authors:
 #     - Nandish H R
 #     - Ramvikas S V
 #     - Deepti Bhat
-#!/bin/bash
- 
+
 # Define the log file path and position file
 AUTH_LOG="/var/log/auth.log"
-LOG_POSITION="/tmp/auth_log_position"
+LOG_POSITION="/tmp/auth_log_position" 
 
 # Time duration in minutes to check for failed logins
 TIME_DURATION=$2
@@ -31,7 +31,7 @@ check_failed_logins() {
     local output_generated=false  # Flag to check if output is generated
     # Get the last read position from the log file
     if [ -f "$LOG_POSITION" ]; then
-        last_position=$(cat "$LOG_POSITION")
+        last_position=$(cat "$LOG_POSITION")  # byte position
     else
         last_position=0
     fi
@@ -43,6 +43,9 @@ check_failed_logins() {
     recent_failed_logins=$(echo "$new_logs" | awk -v minute="$(date -d "$TIME_DURATION minutes ago" +'%Y-%m-%dT%H:%M:%S')" '$1" "$2 >= minute')
 
     if [ -z "$recent_failed_logins" ]; then
+        # Update the log position
+        current_position=$(wc -c < "$AUTH_LOG")
+        echo "$current_position" > "$LOG_POSITION"
         return
     fi
 
@@ -82,12 +85,12 @@ check_failed_logins() {
                 fi
             done
             echo "--------------------------------------------"
-            # Update the log position
-            current_position=$(wc -c < "$AUTH_LOG")
-            echo "$current_position" > "$LOG_POSITION"
         fi
     done <<< "$user_counts"
     if $output_generated; then
+        # Update the log position
+        current_position=$(wc -c < "$AUTH_LOG")
+        echo "$current_position" > "$LOG_POSITION"    
         echo "End of Report: This report summarizes the analysis of failed login attempts within the specified time frame. Please review the details provided above for security assessments and necessary actions."
     fi
 }
