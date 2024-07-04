@@ -1,10 +1,10 @@
+#!/bin/bash
 # File: detect_failed_password.sh
 # Authors:
 #     - Nandish H R
 #     - Ramvikas S V
 #     - Hemanth Kumar S
 #     - Deepti Bhat
-#!/bin/bash
 
 # Define the log file path and position file
 AUTH_LOG="/var/log/auth.log"
@@ -18,6 +18,7 @@ PASSWORD_CHANGE_THRESHOLD=$1
 
 # Function to check password changes
 check_password_changes() {
+    local output_generated=false  # Flag to check if output is generated
     # Get the last read position from the log file
     if [ -f "$LOG_POSITION" ]; then
         last_position=$(cat "$LOG_POSITION")
@@ -32,6 +33,9 @@ check_password_changes() {
     recent_password_changes=$(echo "$new_logs" | awk -v minute="$(date -d "$TIME_DURATION minutes ago" +'%Y-%m-%dT%H:%M:%S')" '$1" "$2 >= minute')
 
     if [ -z "$recent_password_changes" ]; then
+        # Update the log position
+        current_position=$(wc -c < "$AUTH_LOG")
+        echo "$current_position" > "$LOG_POSITION" 
         return
     fi
 
@@ -46,13 +50,17 @@ check_password_changes() {
             echo "Password changes detected for user '$user' that exceed the threshold of $PASSWORD_CHANGE_THRESHOLD within the past $TIME_DURATION minutes ($count occurrences):"
             echo "$user_details"
             echo "running"
-            password_changes_detected=true
+            output_generated=true  # Set flag to true when output is generated
              # Update the log position
             current_position=$(wc -c < "$AUTH_LOG")
             echo "$current_position" > "$LOG_POSITION"
         fi
     done <<< "$user_counts"
-
+    if $output_generated; then
+        # Update the log position
+        current_position=$(wc -c < "$AUTH_LOG")
+        echo "$current_position" > "$LOG_POSITION"    
+    fi
 }
 
 # Main loop to continuously monitor
