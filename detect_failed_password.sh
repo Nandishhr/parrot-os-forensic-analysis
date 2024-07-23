@@ -50,10 +50,7 @@ check_password_changes() {
             echo "Password changes detected for user '$user' that exceed the threshold of $PASSWORD_CHANGE_THRESHOLD within the past $TIME_DURATION minutes ($count occurrences):"
             echo "$user_details"
             echo "running"
-            output_generated=true  # Set flag to true when output is generated
-             # Update the log position
-            current_position=$(wc -c < "$AUTH_LOG")
-            echo "$current_position" > "$LOG_POSITION"
+            output_generated=true  # Set flag to true when output is generated         
         fi
     done <<< "$user_counts"
     if $output_generated; then
